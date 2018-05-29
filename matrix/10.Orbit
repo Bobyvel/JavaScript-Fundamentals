@@ -1,0 +1,20 @@
+function makeMatrix([width, height, x, y]) {
+
+    let rows = width; let cols = height;
+    let rowIndex = x; let colIndex = y;
+
+    let matrix = [];
+    for (let i = 0; i < rows; i++) {
+        matrix[i] = [];
+    }
+
+    for(let row = 0; row < rows; row++) {
+        for(let col=0; col<cols; col++) {
+
+            matrix[row][col] = Math.max(Math.abs(row - rowIndex), Math.abs(col - colIndex)) + 1;
+        }
+    }
+    console.log(matrix.map(r => r.join(" ")).join("\n"));
+}
+
+makeMatrix([4, 4, 0, 0]);
